@@ -46,19 +46,19 @@ gulp.task('sass', function() {
 
 	.pipe(sass({
 
-		outputStyle: 'compressed',
+		outputStyle: 'expanded',
 		precision: 9
 
 	}).on('error', sass.logError))
 
 	.pipe(autoprefixer({
 
-		browsers: ['last 2 versions'],
+		overrideBrowserslist: ['last 2 versions'],
 		cascade: false
 
 	}))
 
-	.pipe(gulp.dest(basePaths.assets + 'css'))
+	.pipe(gulp.dest(basePaths.assets))
 
 	.pipe(browsersync.stream());
 
