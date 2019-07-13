@@ -1,0 +1,18 @@
+# Ignore OS generated files.
+
+.DS_Store
+
+# Title
+
+# src/
+src/backup/
+src/database/
+
+# Ignore node dependency directories (used by Gulp)
+
+node_modules/
+
+# Ignore editor files.
+
+# *.sublime-project
+# *.sublime-workspace
