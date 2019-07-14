@@ -18,7 +18,7 @@ var sass = require('gulp-sass');
 
 var autoprefixer = require('gulp-autoprefixer');
 
-// var imagemin = require('gulp-imagemin');
+var imagemin = require('gulp-imagemin');
 
 var browsersync = require('browser-sync');
 
@@ -31,7 +31,7 @@ var basePaths = {
 
 	dev:    'src/',
 	dist:   'dist/html/wp-content/themes/Avada-Child-Theme/',
-	assets: 'dist/html/wp-content/themes/Avada-Child-Theme/'
+	assets: 'dist/html/wp-content/themes/Avada-Child-Theme/assets/'
 
 };
 
@@ -103,21 +103,21 @@ gulp.task('sass', function() {
 
 // Notes...
 
-// gulp.task('img', function() {
+gulp.task('img', function() {
 
-	// return gulp.src(basePaths.dev + 'img/**/*')
+	return gulp.src(basePaths.dev + 'img/**/*')
 
-	// .pipe(imagemin({
+	.pipe(imagemin({
 
-		// optimizationLevel: 5,
-		// progressive: true,
-		// interlaced: true
+		optimizationLevel: 5,
+		progressive: true,
+		interlaced: true
 
-	// }))
+	}))
 
-	// .pipe(gulp.dest(basePaths.assets + 'img'));
+	.pipe(gulp.dest(basePaths.assets + 'img'));
 
-// });
+});
 
 /* Fonts
 ------------------------------*/
@@ -151,7 +151,7 @@ gulp.task('watch', function() {
 
 	// gulp.watch(basePaths.dev + 'js/*.js', gulp.series('js'));
 
-	// gulp.watch(basePaths.dev + 'img/**/*', gulp.series('img'));
+	gulp.watch(basePaths.dev + 'img/**/*', gulp.series('img'));
 
 	// gulp.watch(basePaths.dev + 'fonts/**/*', gulp.series('fonts'));
 
@@ -164,4 +164,4 @@ gulp.task('watch', function() {
 
 // Notes...
 
-gulp.task('default', gulp.parallel('sass', 'watch'));
+gulp.task('default', gulp.parallel('sass', 'img', 'watch'));
