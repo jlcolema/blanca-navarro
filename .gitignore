@@ -7,6 +7,7 @@
 # src/
 src/backup/
 src/database/
+src/docs/
 
 # Ignore node dependency directories (used by Gulp)
 
@@ -16,3 +17,11 @@ node_modules/
 
 # *.sublime-project
 # *.sublime-workspace
+*.nova
+*.code-workspace
+
+# Miscellaneous
+
+*.sql
+package-lock.json
+wp-config*
