@@ -1,27 +1,21 @@
-# Ignore OS generated files.
-
 .DS_Store
-
-# Title
-
-# src/
-src/backup/
-src/database/
-src/docs/
-
-# Ignore node dependency directories (used by Gulp)
-
-node_modules/
-
-# Ignore editor files.
-
-# *.sublime-project
-# *.sublime-workspace
 *.nova
 *.code-workspace
+organize/*
 
-# Miscellaneous
+# Ignore everything in the root except the "wp-content" directory.
 
-*.sql
-package-lock.json
-wp-config*
+dist/html/*
+!dist/html/wp-content/
+
+# Ignore everything in the "wp-content" directory, except:
+# "mu-plugins", "plugins", "themes" directory.
+
+dist/html/wp-content/*
+!dist/html/wp-content/themes/
+
+# Ignore specific themes.
+
+dist/html/wp-content/themes/*
+!dist/html/wp-content/themes/Avada/
+!dist/html/wp-content/themes/Avada-Child-Theme/
